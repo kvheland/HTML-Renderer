@@ -328,7 +328,7 @@ namespace TheArtOfDev.HtmlRenderer.Core.Handlers
             var filePath = CommonUtils.GetLocalfileName(source);
 
             // We only use the existing file if it is less than a day old
-            if (filePath.Exists && filePath.Length > 0 && filePath.CreationTimeUtc < DateTime.UtcNow.AddDays(-1))
+            if (filePath.Exists && filePath.Length > 0 && filePath.CreationTimeUtc > DateTime.UtcNow.AddDays(-1))
             {
                 SetImageFromFile(filePath);
             }
