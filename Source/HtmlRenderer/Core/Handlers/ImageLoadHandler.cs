@@ -326,12 +326,19 @@ namespace TheArtOfDev.HtmlRenderer.Core.Handlers
         private void SetImageFromUrl(Uri source)
         {
             var filePath = CommonUtils.GetLocalfileName(source);
-            if (filePath.Exists && filePath.Length > 0)
+
+            // We only use the existing file if it is less than a day old
+            if (filePath.Exists && filePath.Length > 0 && filePath.CreationTimeUtc < DateTime.UtcNow.AddDays(-1))
             {
                 SetImageFromFile(filePath);
             }
             else
             {
+                if (filePath.Exists)
+                {
+                    filePath.Delete();
+                }
+
                 _htmlContainer.GetImageDownloader().DownloadImage(source, filePath.FullName, !_htmlContainer.AvoidAsyncImagesLoading, OnDownloadImageCompleted);
             }
         }

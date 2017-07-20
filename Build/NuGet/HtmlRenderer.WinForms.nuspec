@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>HtmlRenderer.WinForms</id>
-    <version>0.0.0.1</version>
+    <version>1.5.1.1</version>
     <title>HTML Renderer for WinForms</title>
     <authors>Arthur Teplitzki</authors>
     <owners>Arthur Teplitzki</owners>
@@ -39,7 +39,7 @@
       <frameworkAssembly assemblyName="System.Drawing" targetFramework="" />
     </frameworkAssemblies>
     <dependencies>
-      <dependency id="HtmlRenderer.Core" version="1.5.1-beta1"/>
+      <dependency id="HtmlRenderer.Core" version="1.5.1.1"/>
     </dependencies>
   </metadata>
   <files>
